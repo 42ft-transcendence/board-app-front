@@ -2,6 +2,7 @@ import React, { ReactEventHandler, useState } from "react";
 import Button from "../components/Button";
 import axios from "axios";
 import { base_url } from "../api";
+import { StyledInput } from "../components/StyledInput";
 
 const Login = () => {
   const [username, setUsername] = useState("");
@@ -41,26 +42,12 @@ const Login = () => {
       <h1 style={{ color: "#E5EAF5" }}>Jeongkpa Board</h1>
       <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
         Username
-        <input
-          style={{ width: "300px", height: "40px", borderRadius: "20px", backgroundColor: "#A4A6AF", textAlign: "center", border: "None" }}
-          type="text"
-          placeholder="username"
-          onChange={usernameChange}
-          value={username}/>
+        <StyledInput type="text" placeholder="username" onChange={usernameChange} value={username} />
         Password
-        <input
-          style={{ width: "300px", height: "40px", borderRadius: "20px", backgroundColor: "#A4A6AF", textAlign: "center", border: "None" }}
-          type="text"
-          placeholder="password"
-          onChange={passwordChange}
-          value={password}/>
+        <StyledInput type='text' placeholder='password' onChange={passwordChange} value={password} />
         <div style={{ marginTop: "40px" }}>
-          <Button
-            title="Sign up"
-            onClick={moveToSignUp}/>
-          <Button
-            title="Log in"
-            onClick={(evnet) => {loginClick(event)}}/>
+          <Button title="Sign up" onClick={moveToSignUp}/>
+          <Button title="Log in" onClick={(evnet) => {loginClick(event)}}/>
         </div>
       </div>
     </>

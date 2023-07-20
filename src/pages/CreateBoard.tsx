@@ -1,4 +1,5 @@
 import Button from "../components/Button";
+import { StyledInput } from "../components/StyledInput";
 import User from "../User";
 
 export interface CreateBoardProps {
@@ -12,13 +13,11 @@ const CreateBoard = ({user}: CreateBoardProps) => {
       <h1 style={{ color: "#E5EAF5" }}>Create Board</h1>
       <form style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
         Title
-        <input style={{ width: "300px", height: "40px", borderRadius: "20px", backgroundColor: "#A4A6AF", textAlign: "center" }} type="text" placeholder="title"/>
+        <StyledInput type="text" placeholder="title" />
         Description
-        <input style={{ width: "300px", height: "40px", borderRadius: "20px", backgroundColor: "#A4A6AF", textAlign: "center" }} type="text" placeholder="description"/>
+        <StyledInput type='text' placeholder='description' />
         Author
-        <div style={{ width: "300px", height: "40px", borderRadius: "20px", backgroundColor: "#A4A6AF", textAlign: "center" }}>
-          {user.username}
-        </div>
+        <StyledInput type='text' placeholder={user.username} disabled/>
         <div style={{ marginTop: "40px" }}>
           <Button title="Cancel"/>
           <Button title="Create"/>
