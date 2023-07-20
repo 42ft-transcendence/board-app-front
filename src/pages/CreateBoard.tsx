@@ -1,4 +1,4 @@
-import Button from "../components/Button";
+import { StyledButton } from "../components/StyledButton";
 import { StyledInput } from "../components/StyledInput";
 import User from "../User";
 
@@ -19,8 +19,8 @@ const CreateBoard = ({user}: CreateBoardProps) => {
         Author
         <StyledInput type='text' placeholder={user.username} disabled/>
         <div style={{ marginTop: "40px" }}>
-          <Button title="Cancel"/>
-          <Button title="Create"/>
+          <StyledButton>Cancel</StyledButton>
+          <StyledButton>Create</StyledButton>
         </div>
       </form>
     </>

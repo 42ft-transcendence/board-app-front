@@ -1,5 +1,5 @@
 import Board from "../Board";
-import Button from "../components/Button";
+import { StyledButton } from "../components/StyledButton";
 import { StyledInput } from "../components/StyledInput";
 import User from "../User";
 
@@ -22,8 +22,8 @@ const ShowBoard = ({ user, author, board }: ShowBoardProps) => {
         Author
         <StyledInput type='text' placeholder={author.username} disabled/>
         <div style={{ marginTop: "40px" }}>
-          <Button title="Back"/>
-          <Button title="Edit"/>
+          <StyledButton>Back</StyledButton>
+          <StyledButton>Edit</StyledButton>
         </div>
       </form>
     </>

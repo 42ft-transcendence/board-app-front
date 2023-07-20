@@ -1,5 +1,5 @@
 import React, { ReactEventHandler, useState } from "react";
-import Button from "../components/Button";
+import { StyledButton } from "../components/StyledButton";
 import axios from "axios";
 import { base_url } from "../api";
 import { StyledInput } from "../components/StyledInput";
@@ -46,8 +46,8 @@ const Login = () => {
         Password
         <StyledInput type='text' placeholder='password' onChange={passwordChange} value={password} />
         <div style={{ marginTop: "40px" }}>
-          <Button title="Sign up" onClick={moveToSignUp}/>
-          <Button title="Log in" onClick={(evnet) => {loginClick(event)}}/>
+          <StyledButton onClick={moveToSignUp}>Sign up</StyledButton>
+          <StyledButton onClick={loginClick}>Log in</StyledButton>
         </div>
       </div>
     </>
