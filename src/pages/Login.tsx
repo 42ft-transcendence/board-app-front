@@ -1,11 +1,9 @@
-import { useState } from "react";
-import Button from "./Button";
+import React, { ReactEventHandler, useState } from "react";
+import Button from "../Button";
 import axios from "axios";
-import { base_url } from "./api";
+import { base_url } from "../api";
 
-
-
-const SignUp = () => {
+const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
@@ -17,18 +15,18 @@ const SignUp = () => {
     setPassword(event.target.value);
   }
 
-  const moveToLogin = (event: React.MouseEvent<HTMLButtonElement>) => {
+  const moveToSignUp = (event: React.MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
-    window.location.href = '/';
+    window.location.href = '/signup';
   }
 
-  const signUpClick = async (event: React.MouseEvent<HTMLButtonElement>) => {
+  const loginClick = async (event: React.MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
     console.log({username: {username}, password: {password}});
     try {
-      const response = await axios.post(base_url + '/auth/signup',{
-        "username": username,
-        "password": password
+      const response = await axios.post(base_url + '/auth/signin', {
+        username: username,
+        password: password,
       });
 
       console.log(response);
@@ -37,9 +35,10 @@ const SignUp = () => {
       console.error(e);
     }
   }
+
   return (
     <>
-      <h1 style={{ color: "#E5EAF5", textAlign: "center"}}>Sign up</h1>
+      <h1 style={{ color: "#E5EAF5" }}>Jeongkpa Board</h1>
       <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
         Username
         <input
@@ -57,15 +56,15 @@ const SignUp = () => {
           value={password}/>
         <div style={{ marginTop: "40px" }}>
           <Button
-            title="Cancel"
-            onClick={moveToLogin}/>
-          <Button
             title="Sign up"
-            onClick={signUpClick}/>
+            onClick={moveToSignUp}/>
+          <Button
+            title="Log in"
+            onClick={(evnet) => {loginClick(event)}}/>
         </div>
       </div>
     </>
   );
 }
 
-export default SignUp;
+export default Login;

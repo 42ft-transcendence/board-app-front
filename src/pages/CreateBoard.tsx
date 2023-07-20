@@ -1,5 +1,5 @@
-import Button from "./Button";
-import User from "./User";
+import Button from "../Button";
+import User from "../User";
 
 export interface CreateBoardProps {
   user: User;

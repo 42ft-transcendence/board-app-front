@@ -1,6 +1,6 @@
-import Board from "./Board";
-import Button from "./Button";
-import User from "./User";
+import Board from "../Board";
+import Button from "../Button";
+import User from "../User";
 
 export interface ShowBoardProps {
   user: User;
