@@ -1,5 +1,5 @@
 import Board from "../Board";
-import Button from "../Button";
+import Button from "../components/Button";
 import User from "../User";
 
 export interface ShowBoardProps {

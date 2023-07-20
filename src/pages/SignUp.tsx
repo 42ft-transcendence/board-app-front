@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Button from "../Button";
+import Button from "../components/Button";
 import axios from "axios";
 import { base_url } from "../api";
 
