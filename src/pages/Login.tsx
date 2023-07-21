@@ -3,6 +3,7 @@ import { StyledButton } from "../components/StyledButton";
 import axios from "axios";
 import { base_url } from "../api";
 import { StyledInput } from "../components/StyledInput";
+import Cookies from 'js-cookie';
 
 const Login = () => {
   const [username, setUsername] = useState("");
@@ -29,9 +30,15 @@ const Login = () => {
         username: username,
         password: password,
       });
-
-      console.log(response);
-      // window.location.href = '/boardlist';
+      console.log(response.data);
+      if (response.data?.accessToken) {
+        alert('access token', response.data.accessToken);
+        Cookies.set('accessToken', response.data.accessToken, {expires: 7});
+        window.location.href = '/boards';
+      } else {
+        alert ('no token');
+        return ;
+      }
     } catch (e) {
       console.error(e);
     }

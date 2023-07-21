@@ -7,6 +7,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import SignUp from './pages/SignUp.tsx'
 import ShowBoard from './pages/ShowBoard.tsx'
 import CreateBoard from './pages/CreateBoard.tsx'
+import BoardList from './pages/BoardList.tsx'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
@@ -14,6 +15,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
       <Routes>
         <Route path="/" element={<Login/>}></Route>
         <Route path="/signup" element={<SignUp/>}></Route>
+        <Route path="/boards" element={<BoardList/>}></Route>
         <Route path="/board" element={<ShowBoard/>}></Route>
         <Route path="/create" element={<CreateBoard/>}></Route>
       </Routes>
